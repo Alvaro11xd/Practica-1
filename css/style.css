@@ -48,22 +48,21 @@ ul{
     position: relative;
     height: 100%;
     --clipi: polygon(0 0, 100% 0, 100% 0, 0 0);
-
+    --transform: rotate(-90deg);
 }
 .nav__item:hover{
     --clipi: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+.nav__arrow{
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
 }
 .nav__sublinks{
     clip-path: var(--clipi);
     transition: clip-path .3s;
-}
-
-.nav__arrow{
-    transform: rotate(-90deg);
-    transition: transform .3s;
-}
-.nav__arrow:hover{
-    transform: unset;
 }
 .nav__link,
 .nav__logo{
@@ -71,6 +70,12 @@ ul{
 }
 .nav__logo{
     font-weight: 600;
+}
+.nav__link{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
 }
 .menu__hamburguesa{
     display: none;
