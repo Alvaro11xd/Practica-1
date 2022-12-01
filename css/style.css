@@ -7,8 +7,10 @@
 }
 
 :root{
-    --bg-header1: #2c097c;
-    --bg-header2: #663cc7e2;
+    --bg-header1: #7338ac;
+    --bg-header2: #635ad9;
+    --color3: #219be4;
+    --color4: #88f4ff;
     --color-negro: #000;
     --color-negro--difuminado: rgba(0, 0, 0, 0.208);
     --color-blanco: #fff;
@@ -25,6 +27,7 @@ ul{
     list-style: none;
 }
 .header{
+    width: 100%;
     height: 70px;
     background-image: linear-gradient(to top, var(--bg-header1), var(--bg-header2));
     box-shadow: 0px 0px 8px 5px var(--color-negro--difuminado);
@@ -53,6 +56,7 @@ ul{
 .nav__item:hover{
     --clipi: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     --transform: rotate(0);
+    background-color: var(--color3);
 }
 .nav__arrow{
     transform: var(--transform);
@@ -63,6 +67,28 @@ ul{
 .nav__sublinks{
     clip-path: var(--clipi);
     transition: clip-path .3s;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translateY(100%);
+    background-color: var(--bg-header2);
+}
+.nav__subitem{
+    width: 100%;
+}
+.nav__sublink{
+    font-weight: 500;
+    color: var(--color-negro);
+    display: block;
+    width: 100%;
+}
+.nav__sublink--inside{
+    padding: 30px 110px 30px 20px;
+    border-block-color: unset;
+}
+.nav__sublink--inside:hover{
+    background-color: var(--bg-header1);
+    color: var(--color-blanco);
 }
 .nav__link,
 .nav__logo{
@@ -79,4 +105,46 @@ ul{
 }
 .menu__hamburguesa{
     display: none;
+}
+
+@media (max-width:768px){
+    .menu__hamburguesa{
+        display: flex;
+    }
+
+    .nav__links{
+        position: fixed;
+        top: 70px;
+        right: 0;
+        bottom: 0;
+        max-width: 400px;
+        width: 100%;
+        background-color: var(--bg-header2);
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+    }
+    .nav__link{
+        padding: 30px 0;
+        padding-left: 30px;
+        height: auto;
+    }
+    .nav__arrow{
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    .nav__sublinks{
+        position: unset;
+        display: grid;
+        width: 100%;
+        transform: translateY(0);
+    }
+    .nav__sublink{
+        color: var(--color-blanco);
+    }
+    .nav__sublink--inside{
+        width: 90%;
+        margin-left: auto;
+        border-left: 2px solid var(--color3);
+    }
 }
