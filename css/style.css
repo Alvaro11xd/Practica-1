@@ -114,6 +114,13 @@ ul{
         --clipi: 0;
         overflow: hidden;
     }
+    .nav__item--active{
+        --transform: rotate(0);
+        --background: var(--color-negro);
+    }
+    .nav__item--show{
+        background-color: var(--background);
+    }
     .nav__links{
         position: fixed;
         top: 70px;
@@ -125,6 +132,11 @@ ul{
         overflow-y: auto;
         display: grid;
         grid-auto-rows: max-content;
+        transform: translate(100%);
+    }
+    .menu__links--show{
+        transform: unset;
+        width: 100%;
     }
     .nav__link{
         padding: 30px 0;
