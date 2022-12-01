@@ -78,7 +78,7 @@ ul{
 }
 .nav__sublink{
     font-weight: 500;
-    color: var(--color-negro);
+    color: var(--color-blanco);
     display: block;
     width: 100%;
 }
@@ -88,7 +88,6 @@ ul{
 }
 .nav__sublink--inside:hover{
     background-color: var(--bg-header1);
-    color: var(--color-blanco);
 }
 .nav__link,
 .nav__logo{
@@ -111,7 +110,10 @@ ul{
     .menu__hamburguesa{
         display: flex;
     }
-
+    .nav__item{
+        --clipi: 0;
+        overflow: hidden;
+    }
     .nav__links{
         position: fixed;
         top: 70px;
@@ -138,6 +140,8 @@ ul{
         display: grid;
         width: 100%;
         transform: translateY(0);
+        height: 0;
+        transition: height .3s;
     }
     .nav__sublink{
         color: var(--color-blanco);
